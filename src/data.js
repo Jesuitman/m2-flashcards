@@ -1,4 +1,3 @@
-/* eslint-disable */
 const prototypeData = [{
   "id": 1,
   "question": "What allows you to define a set of related information using key-value pairs?",
@@ -150,7 +149,7 @@ const prototypeData = [{
   "answers": ["prototype method", "object", "callback function"],
   "correctAnswer": "prototype method"
 }]
-/* eslint-enable */
+
 
 module.exports = {
   prototypeData 
