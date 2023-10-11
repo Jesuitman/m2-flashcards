@@ -23,7 +23,7 @@ describe('card', function() {
     const card2 = createCard(2, "Question 2", ["Answer 2"], "Answer 2")
 
     const deck = createDeck ([card1,card2])
-
+//expect deck to yield an array, work on this later
     expect(deck.cards).to.deep.equal([card1,card2])
     expect(deck.countCards()).to.equal(2)
   })
