@@ -30,7 +30,6 @@ function endRound(round) {
 }
 
 function createRound(deck) {
-  // console.log(deck)
     return {
       deck: deck,
       currentCard: deck.cards[0], // Start with the first card in the deck

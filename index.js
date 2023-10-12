@@ -4,20 +4,15 @@ const {createRound,takeTurn,calculatePercentCorrect,endRound,evaluateGuess} = re
 const { printMessage, printQuestion } = require ('./src/game');
 const { prototypeData } = require ('./src/data');
 
-// function evaluateGuess(guess, correctAnswer) {
-//     if (guess === correctAnswer) {
-//         return 'correct!';
-//     } else {
-//         return 'incorrect!';
-//     }
-// }
+
 function start(){
     const deck =  createDeck(prototypeData)
-    // printMessage(deck)
+    printMessage(deck)
     const round = createRound(deck)
     printQuestion(round)
     takeTurn(0,round),
-    calculatePercentCorrect(round),
+    calculatePercentCorrect(round)
+    if (round.turns>30){
     endRound(round)
-}
+}}
 start()

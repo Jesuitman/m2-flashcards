@@ -15,9 +15,14 @@ function createDeck(cards){
         }
     }
 }
+    
+function countCards(deck){
+    return deck.cards.length
+}
 
 
 module.exports = {
     createCard,
-    createDeck
+    createDeck,
+    countCards
 }
