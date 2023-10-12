@@ -1,10 +1,18 @@
+function evaluateGuess(guess, correctAnswer) {
+  if (guess === correctAnswer) {
+      return 'correct!';
+  } else {
+      return 'incorrect!';
+  }
+}
+
 function takeTurn(guess,round) {
   const feedback = evaluateGuess(guess, round.currentCard.correctAnswer);
   if (feedback === 'incorrect!') {
     round.incorrectGuesses.push(round.currentCard.id);
   }
   round.turns++;
-  const nextCardIndex = round.turns % round.deck.cards.length;
+  const nextCardIndex = round.turns  
   round.currentCard = round.deck.cards[nextCardIndex];
   return feedback;
 }
@@ -17,12 +25,12 @@ function calculatePercentCorrect(round) {
 }
 
 function endRound(round) {
-  const percentCorrect = round.calculatePercentCorrect();
+  const percentCorrect = calculatePercentCorrect(round);
   console.log(`** Round over! ** You answered ${percentCorrect}% of the questions correctly!`);
 }
 
 function createRound(deck) {
-
+  // console.log(deck)
     return {
       deck: deck,
       currentCard: deck.cards[0], // Start with the first card in the deck
@@ -38,5 +46,6 @@ module.exports ={
     createRound,
     takeTurn,
     calculatePercentCorrect,
-    endRound
+    endRound,
+    evaluateGuess
 }
